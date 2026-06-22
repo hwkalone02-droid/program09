@@ -1,0 +1,51 @@
+program 4:
+
+cd desktop
+mvn archetype:generate DgroupID=com.example \
+-DartifactID=demo-app \
+-DarchetypeArtifactID=maven-acrhetype-quickstart \
+-DinteractiveMode=false
+
+cd demo-app
+nano src/main/java/com/example/App.java
+package com.example; 
+/
+**
+*Hello world!
+*
+*
+/
+public class App
+{
+public static void main(String[] args)
+{
+System.out.println("Hello world")
+}
+}
+mvn clear package
+java-cp target/demo-app-1.0-SNAPSHOT.jar.com.example.APP
+
+gradle init
+nano build.gradle
+
+apply plugin:'java'
+apply plugin:'application'
+
+group='com.example'
+version='1.0-SNAPSHOT'
+
+repositories{
+    mavenCentral()
+}
+
+dependencies{
+    testImplimentation 'junit:junit:4.13.2'
+}
+
+mainClassName='com.example.App'
+
+gradle build
+gradle run
+
+
+
